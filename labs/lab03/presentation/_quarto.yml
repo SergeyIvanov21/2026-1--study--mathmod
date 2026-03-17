@@ -1,38 +1,66 @@
 project:
-  title: "presentation"
-  output-dir: "_presentation"
+  title: "report"
+  output-dir: "_output"
 
 standalone: true
 self-contained: true
-slide-level: 2
+
+## Julia support
+engine: julia
+julia:
+  exeflags: ["--project=/home/svivanov/work/study/2026-1/2026-1==study--mathmod/2026-1--study--mathmod/labs/lab01/project"]
+
+## Generic options
 lang: ru-RU
+number-sections: true
+toc: true
+toc-title: "Содержание"
+toc-depth: 2
+## Crossref customization
 crossref:
-  lof-title: Список иллюстраций
-  lot-title: Список таблиц
-  lol-title: Листинги
-format: # Formats
-  beamer: # Pdf output format
+  lof-title: "Список иллюстраций"
+  lot-title: "Список таблиц"
+  lol-title: "Листинги"
+## Bibliography
+bibliography:
+  - bib/cite.bib
+csl: _resources/csl/gost-r-7-0-5-2008-numeric.csl
+## Formats
+format:
+  ### Docx output format
+  docx:
     toc: true
-    toc-title: Содержание
-    number-sections: false
-    number-depth: 1
+    number-sections: true
+    toc-depth: 2
+  ### Pdf output format
+  pdf:
+    # pdf-engine: xelatex
+    ### minted support
+    # filters:
+    #   - minted-quarto
+    toc: true
+    number-sections: true
     colorlinks: false
-    toc-depth: 1
-    aspectratio: 169
-    section-titles: true
-    incremental: true
-    navigation: horizontal
+    toc-depth: 2
+    lof: true # List of figures
+    lot: true # List of tables
+    #### Document
+    documentclass: scrreprt
+    papersize: a4
+    fontsize: 12pt
+    linestretch: 1.5
+    #### Language
+    babel-lang: russian
+    babel-otherlangs: english
+    #### Biblatex
+    cite-method: biblatex
+    biblio-style: gost-numeric
+    biblatexoptions:
+      - backend=biber
+      - langhook=extras
+      - autolang=other*
+    #### Misc options
     csquotes: true
     indent: true
     include-in-header:
-      - file: _resources/tex/beamer.tex
-    babel-lang: russian
-    babel-otherlangs: english
-  revealjs: # Html output
-    transition: slide
-    margin: 0.2
-    smaller: true
-    slide-number: true
-    output-ext: html
-    theme: beige
-    logo: _resources/image/logo_rudn.png
+      - file: _resources/tex/preamble.tex

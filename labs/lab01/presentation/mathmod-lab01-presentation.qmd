@@ -8,7 +8,7 @@ author:
 title: Отчёт по лабораторной работе №1
 subtitle: Математическое моделирование
 license: CC BY
-date: 2026-20-02
+date: 2026-02-20
 
 ## Generic options
 lang: ru-RU

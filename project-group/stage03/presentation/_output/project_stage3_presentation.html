@@ -1255,9 +1255,8 @@ U_{LJ}(r) = 4\varepsilon \left[ \left(\frac{\sigma}{r}\right)^{12} - \left(\frac
 </div>
 </div><div class="column" style="width:40%;">
 <ul>
-<li>Полная энергия <span class="math inline">\(E = E_k + U\)</span> сохраняется с точностью <span class="math inline">\(\sim 10^{-4}\)</span></li>
-<li>Флуктуации энергии подтверждают устойчивость метода Верле</li>
-<li>Начальный переходный процесс (~500 шагов) соответствует термализации</li>
+<li>Полная энергия <span class="math inline">\(E = E_k + U\)</span> сохраняется с относительной погрешностью около <span class="math inline">\(\sim 10^{-4}\)</span></li>
+<li>Отсутствие дрейфа полной энергии подтверждает устойчивость метода Верле</li>
 </ul>
 </div></div>
 </section>
@@ -1293,7 +1292,7 @@ U_{LJ}(r) = 4\varepsilon \left[ \left(\frac{\sigma}{r}\right)^{12} - \left(\frac
 </div><div class="column" style="width:40%;">
 <p>Теоретическое распределение Максвелла:</p>
 <p><span class="math display">\[
-f(v) = 4\pi \left(\frac{m}{2\pi k_B T}\right)^{3/2} v^2 e^{-\frac{mv^2}{2k_BT}}
+f(v) = \frac{m}{k_B T}\, v\, e^{-\frac{mv^2}{2k_BT}}
 \]</span></p>
 <p>Численное распределение хорошо согласуется с теорией.</p>
 </div></div>
@@ -1309,13 +1308,13 @@ f(v) = 4\pi \left(\frac{m}{2\pi k_B T}\right)^{3/2} v^2 e^{-\frac{mv^2}{2k_BT}}
 </figure>
 </div>
 </div><div class="column" style="width:45%;">
-<p>Радиальная функция распределения:</p>
+<p>Радиальная функция распределения показывает насколько вероятно найти другую частицу на расстоянии r от выбранной:</p>
 <p><span class="math display">\[
-g(r) = \frac{V}{N^2} \left\langle \sum_{i \neq j} \delta(r - r_{ij}) \right\rangle
+g(r) = \frac{S}{N^2} \left\langle \sum_{i \neq j} \delta(r - r_{ij}) \right\rangle
 \]</span></p>
 <ul>
 <li>Первый пик соответствует ближайшим соседям</li>
-<li>При больших <span class="math inline">\(r\)</span> функция стремится к 1 (газообразное состояние)</li>
+<li>При больших <span class="math inline">\(r\)</span> функция стремится к 1 (однородная среда)</li>
 </ul>
 </div></div>
 </section>
@@ -1341,8 +1340,7 @@ g(r) = \frac{V}{N^2} \left\langle \sum_{i \neq j} \delta(r - r_{ij}) \right\rang
 </div>
 </div><div class="column" style="width:50%;">
 <ul>
-<li>Температура стабилизируется после термализации</li>
-<li>Среднее значение соответствует заданной <span class="math inline">\(T_0 = 1.0\)</span></li>
+<li>Средняя температура близка к заданной <span class="math inline">\(T_0 = 1.0\)</span>, отклонение связано с конечным числом частиц и численными эффектами</li>
 <li>Флуктуации <span class="math inline">\(\sim 5\%\)</span> для <span class="math inline">\(N = 64\)</span></li>
 </ul>
 </div></div>
